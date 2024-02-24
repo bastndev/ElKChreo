@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:practice/pages/controllers/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -9,6 +9,15 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // with SingleTickerProviderStateMixin{}
+  // late AnimationController _controller;
+
+  final TextEditingController _phoneController = TextEditingController();
+  final TextEditingController _otpController = TextEditingController();
+
+  final _formKey = GlobalKey<FormState>();
+  final _formKey1 = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -36,19 +45,85 @@ class _LoginPageState extends State<LoginPage> {
               const SizedBox(height: 10),
               Padding(
                 padding: const EdgeInsets.all(10),
-                child: TextFormField(
-                  decoration: InputDecoration(
-                    prefix: const Text("51 "),
-                    label: const Text("Phone Number"),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(20),
+                child: Form(
+                  key: _formKey,
+                  child: TextFormField(
+                    keyboardType: TextInputType.phone,
+
+                    /// `controller` to get the value of the input
+                    controller: _phoneController,
+                    decoration: InputDecoration(
+                      prefix: const Text(
+                        "+51 ",
+                      ),
+                      label: const Text(
+                        "Phone Number",
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                      ),
                     ),
+                    validator: (value) {
+                      if (value!.length != 9) return "Invalid Phone Number";
+                      return null;
+                    },
                   ),
                 ),
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  if (_formKey.currentState!.validate()) {
+                    AuthService.sentOtp(
+                      phone: _phoneController.text,
+                      errorStep: () =>
+                          ScaffoldMessenger.of(context).showSnackBar(
+                        const SnackBar(
+                          content: Text(
+                            "Error in sending OTP",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                          backgroundColor: Colors.red,
+                        ),
+                      ),
+                      nextStep: () {
+                        showDialog(
+                          context: context,
+                          builder: (context) => AlertDialog(
+                            title: const Text('OTP Verification'),
+                            content: Column(
+                              children: [
+                                const Text('Enter 6 numbers OTP'),
+                                const SizedBox(height: 12),
+                                Form(
+                                  key: _formKey1,
+                                  child: TextFormField(
+                                    keyboardType: TextInputType.number,
+                                    /// `controller` value of the input
+                                    controller: _otpController,
+                                    decoration: InputDecoration(
+                                      prefix: const Text("+51 "),
+                                      label: const Text("Phone Number"),
+                                      border: OutlineInputBorder(
+                                        borderRadius: BorderRadius.circular(20),
+                                      ),
+                                    ),
+                                    validator: (value) {
+                                      if (value!.length != 6) {
+                                        return "Invalid OTP";
+                                      }
+                                      return null;
+                                    },
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        );
+                      },
+                    );
+                  }
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.yellow,
                   foregroundColor: Colors.black,
