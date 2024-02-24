@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "851884418933",
+    "project_id": "blitma",
+    "storage_bucket": "blitma.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:851884418933:android:8b8b0980e7ba641b2a553c",
+        "android_client_info": {
+          "package_name": "com.example.practice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "851884418933-mftrdk8a5j8ggs8lactfgmtlrh9ua9uc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBagAeUjVCI6A3HclvZ6_osfdk3vA4m4No"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "851884418933-mftrdk8a5j8ggs8lactfgmtlrh9ua9uc.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
