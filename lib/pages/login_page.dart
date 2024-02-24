@@ -47,7 +47,17 @@ class _LoginPageState extends State<LoginPage> {
                 ),
               ),
               const SizedBox(height: 20),
-              
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.yellow,
+                  foregroundColor: Colors.black,
+                ),
+                child: const Padding(
+                  padding: EdgeInsets.all(15),
+                  child: Text('Send OTP'),
+                ),
+              ),
             ],
           ),
         ),
