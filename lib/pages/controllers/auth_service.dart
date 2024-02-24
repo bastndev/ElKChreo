@@ -53,4 +53,13 @@ class AuthService {
   }
 
   //to logout the user
+  static Future logout() async {
+    await _firebaseAuth.signOut();
+  }
+
+  /// check whether the `user` is logged in or not
+  static Future<bool> isLoggedIn() async {
+    final user = _firebaseAuth.currentUser;
+    return user != null;
+  }
 }
