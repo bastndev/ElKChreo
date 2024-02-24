@@ -51,4 +51,6 @@ class AuthService {
       return e.toString();
     }
   }
+
+  //to logout the user
 }
