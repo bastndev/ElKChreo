@@ -92,6 +92,8 @@ class _LoginPageState extends State<LoginPage> {
                           builder: (context) => AlertDialog(
                             title: const Text('OTP Verification'),
                             content: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 const Text('Enter 6 numbers OTP'),
                                 const SizedBox(height: 12),
@@ -99,6 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                                   key: _formKey1,
                                   child: TextFormField(
                                     keyboardType: TextInputType.number,
+
                                     /// `controller` value of the input
                                     controller: _otpController,
                                     decoration: InputDecoration(
@@ -118,6 +121,12 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ],
                             ),
+                            actions: [
+                              TextButton(
+                                onPressed: () {},
+                                child: const Text('Submit'),
+                              )
+                            ],
                           ),
                         );
                       },
