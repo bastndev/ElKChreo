@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice/pages/controllers/auth_service.dart';
+import 'package:practice/pages/home_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -121,9 +122,29 @@ class _LoginPageState extends State<LoginPage> {
                                 ),
                               ],
                             ),
+                            /** Button `Validator` for next page */
                             actions: [
                               TextButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  if (_formKey1.currentState!.validate()) {
+                                    AuthService.loginWithOtp(
+                                            otp: _otpController.text)
+                                        .then(
+                                      (value) {
+                                        if (value == "Success") {
+                                          Navigator.pop(context);
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  const HomePage(),
+                                            ),
+                                          );
+                                        }
+                                      },
+                                    );
+                                  }
+                                },
                                 child: const Text('Submit'),
                               )
                             ],
