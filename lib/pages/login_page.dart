@@ -106,7 +106,7 @@ class _LoginPageState extends State<LoginPage> {
                                     /// `controller` value of the input
                                     controller: _otpController,
                                     decoration: InputDecoration(
-                                      prefix: const Text("+51 "),
+                                      prefix: const Text(""),
                                       label: const Text("Phone Number"),
                                       border: OutlineInputBorder(
                                         borderRadius: BorderRadius.circular(20),
@@ -138,6 +138,18 @@ class _LoginPageState extends State<LoginPage> {
                                             MaterialPageRoute(
                                               builder: (context) =>
                                                   const HomePage(),
+                                            ),
+                                          );
+                                        } else {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
+                                            SnackBar(
+                                              content: Text(
+                                                value,
+                                                style: const TextStyle(
+                                                    color: Colors.white),
+                                              ),
+                                              backgroundColor: Colors.red,
                                             ),
                                           );
                                         }
