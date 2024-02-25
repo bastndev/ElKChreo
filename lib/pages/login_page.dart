@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:practice/pages/controllers/auth_service.dart';
 import 'package:practice/pages/home_page.dart';
+import 'package:practice/pages/controllers/auth_service.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,9 +10,6 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  // with SingleTickerProviderStateMixin{}
-  // late AnimationController _controller;
-
   final TextEditingController _phoneController = TextEditingController();
   final TextEditingController _otpController = TextEditingController();
 

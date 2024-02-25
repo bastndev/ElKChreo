@@ -4,7 +4,7 @@ class AuthService {
   static final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   static String verifyId = "";
-  // to sent and otp to user
+  // to send and otp to user
   static Future sentOtp({
     required String phone,
     required Function errorStep,
@@ -12,25 +12,26 @@ class AuthService {
   }) async {
     await _firebaseAuth
         .verifyPhoneNumber(
-      timeout: const Duration(seconds: 30),
-      phoneNumber: "+51$phone",
-      verificationCompleted: (phoneAuthCredential) async {
-        return;
+            timeout: const Duration(seconds: 30),
+            phoneNumber: "+51$phone",
+            verificationCompleted: (phoneAuthCredential) async {
+              return;
+            },
+            verificationFailed: (error) async {
+              return;
+            },
+            codeSent: (verificationId, forceResendingToken) async {
+              verifyId = verificationId;
+              nextStep();
+            },
+            codeAutoRetrievalTimeout: (verificationId) async {
+              return;
+            })
+        .onError(
+      (error, stackTrace) {
+        errorStep();
       },
-      verificationFailed: (error) async {
-        return;
-      },
-      codeSent: (verificationId, forceResendingToken) async {
-        verifyId = verificationId;
-        nextStep();
-      },
-      codeAutoRetrievalTimeout: (verificationId) async {
-        return;
-      },
-    )
-        .onError((error, stackTrace) {
-      errorStep();
-    });
+    );
   }
 
   // verify the otp code and login
@@ -59,7 +60,7 @@ class AuthService {
 
   /// check whether the `user` is logged in or not
   static Future<bool> isLoggedIn() async {
-    final user = _firebaseAuth.currentUser;
+    var user = _firebaseAuth.currentUser;
     return user != null;
   }
 }
