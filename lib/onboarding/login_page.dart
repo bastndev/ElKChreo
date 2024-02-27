@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:practice/home_page.dart';
 import 'package:practice/onboarding/login_items.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -54,7 +56,16 @@ class _LoginPageState extends State<LoginPage> {
       width: MediaQuery.of(context).size.width * .9,
       height: 55,
       child: TextButton(
-        onPressed: () {},
+        onPressed: () async {
+          final pres = await SharedPreferences.getInstance();
+          pres.setBool('onboarding', true);
+
+          if (!mounted) return;
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const HomePage()),
+          );
+        },
         child: const Text(
           "Get Started",
           style: TextStyle(
