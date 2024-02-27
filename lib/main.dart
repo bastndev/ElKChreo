@@ -8,6 +8,7 @@ void main() async {
   final prefs = await SharedPreferences.getInstance();
   final onboarding = prefs.getBool('onboarding') ?? false;
   runApp(MyApp(onboarding: onboarding));
+  // runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.yellow),
         useMaterial3: true,
       ),
+      // home: const LoginPage(),
       home: onboarding ? const HomePage() : const LoginPage(),
     );
   }

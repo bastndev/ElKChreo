@@ -11,6 +11,8 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  TextEditingController userNameController = TextEditingController();
+
   final controller = LoginItems();
   final pageController = PageController();
 
@@ -40,7 +42,18 @@ class _LoginPageState extends State<LoginPage> {
                 },
               ),
             ),
+            TextField(
+              controller: userNameController,
+              decoration: InputDecoration(
+                hintText: "Name",
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+              ),
+            ),
+            const SizedBox(height: 40),
             getStarted(),
+            const SizedBox(height: 40),
           ],
         ),
       ),
@@ -57,6 +70,10 @@ class _LoginPageState extends State<LoginPage> {
       height: 55,
       child: TextButton(
         onPressed: () async {
+          SharedPreferences sp = await SharedPreferences.getInstance();
+
+          sp.setString("userName", userNameController.text);
+
           final pres = await SharedPreferences.getInstance();
           pres.setBool('onboarding', true);
 
@@ -65,6 +82,8 @@ class _LoginPageState extends State<LoginPage> {
             context,
             MaterialPageRoute(builder: (context) => const HomePage()),
           );
+          // Navigator.push(context,
+          //     MaterialPageRoute(builder: (context) => const HomePage()));
         },
         child: const Text(
           "Get Started",
