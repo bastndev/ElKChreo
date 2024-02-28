@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice/pages/auth/login/widget/button_login.dart';
+import 'package:practice/pages/auth/login/widget/input_name.dart';
 
 class LoginCard extends StatefulWidget {
   const LoginCard({super.key});
@@ -42,15 +43,7 @@ class _LoginCardState extends State<LoginCard> {
                 ),
               ),
               const SizedBox(height: 20),
-              TextField(
-                controller: userNameController,
-                decoration: InputDecoration(
-                  hintText: "Nombre su negocio",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                ),
-              ),
+              CustomTextField(controller: userNameController),
               const SizedBox(height: 20),
               ButtonHome(userNameController: userNameController),
             ],
