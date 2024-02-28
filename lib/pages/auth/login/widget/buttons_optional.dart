@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice/core/themes/colors/my_colors.dart';
 
 class MyParentWidget extends StatefulWidget {
   const MyParentWidget({super.key});
@@ -62,9 +63,8 @@ class SquareTile extends StatefulWidget {
 }
 
 class SquareTileState extends State<SquareTile> {
-  Color get backgroundColor => widget.isSelected
-      ? Colors.black
-      : Colors.orange;
+  Color get backgroundColor =>
+      widget.isSelected ? MyColor.mainButton : MyColor.secondButton;
 
   @override
   Widget build(BuildContext context) {

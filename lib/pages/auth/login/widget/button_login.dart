@@ -1,19 +1,20 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
+import 'package:practice/core/themes/colors/my_colors.dart';
 import 'package:practice/pages/home/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class ButtonHome extends StatefulWidget {
+class LoginButton extends StatefulWidget {
   final TextEditingController userNameController;
 
-  const ButtonHome({super.key, required this.userNameController});
+  const LoginButton({super.key, required this.userNameController});
 
   @override
-  State<ButtonHome> createState() => _ButtonHomeState();
+  State<LoginButton> createState() => _LoginButtonState();
 }
 
-class _ButtonHomeState extends State<ButtonHome> {
+class _LoginButtonState extends State<LoginButton> {
   final pageController = PageController();
 
   bool isLastPage = false;
@@ -23,7 +24,7 @@ class _ButtonHomeState extends State<ButtonHome> {
     return Container(
       decoration: const BoxDecoration(
         borderRadius: BorderRadius.all(Radius.circular(13)),
-        color: Colors.pink,
+        color: MyColor.mainButton,
       ),
       width: MediaQuery.of(context).size.width * .5,
       height: 55,

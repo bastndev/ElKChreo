@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practice/core/themes/colors/my_colors.dart';
 import 'package:practice/pages/auth/login/widget/button_login.dart';
 import 'package:practice/pages/auth/login/widget/buttons_optional.dart';
 import 'package:practice/pages/auth/login/widget/input_name.dart';
@@ -23,7 +24,7 @@ class _LoginCardState extends State<LoginCard> {
     return Container(
       width: double.infinity,
       decoration: const BoxDecoration(
-        color: Colors.amber,
+        color: MyColor.card,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40),
@@ -47,7 +48,7 @@ class _LoginCardState extends State<LoginCard> {
               const SizedBox(height: 20),
               CustomTextField(controller: userNameController),
               const SizedBox(height: 20),
-              ButtonHome(userNameController: userNameController),
+              LoginButton(userNameController: userNameController),
               const SizedBox(height: 20),
               const ContinueLine(),
               const SizedBox(height: 20),
