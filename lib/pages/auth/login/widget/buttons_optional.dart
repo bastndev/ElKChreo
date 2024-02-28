@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice/core/themes/colors/my_colors.dart';
+import 'package:practice/core/themes/colors/my_color.dart';
 
 class MyParentWidget extends StatefulWidget {
   const MyParentWidget({super.key});

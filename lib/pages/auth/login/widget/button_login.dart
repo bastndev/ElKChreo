@@ -1,7 +1,7 @@
 // ignore_for_file: use_build_context_synchronously
 
 import 'package:flutter/material.dart';
-import 'package:practice/core/themes/colors/my_colors.dart';
+import 'package:practice/core/themes/colors/my_color.dart';
 import 'package:practice/pages/home/home_page.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice/core/themes/colors/my_colors.dart';
+import 'package:practice/core/themes/colors/my_color.dart';
 import 'package:practice/pages/auth/login/widget/button_login.dart';
 import 'package:practice/pages/auth/login/widget/buttons_optional.dart';
 import 'package:practice/pages/auth/login/widget/input_name.dart';
