@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:practice/core/themes/colors/my_color.dart';
-import 'package:practice/pages/auth/login/widget/button_login.dart';
-import 'package:practice/pages/auth/login/widget/buttons_optional.dart';
 import 'package:practice/pages/auth/login/widget/input_name.dart';
-import 'package:practice/pages/auth/login/widget/line_optional.dart';
+import 'package:practice/pages/auth/login/widget/button_login.dart';
+import 'package:practice/pages/auth/login/widget/optional_widget.dart';
 
 class LoginCard extends StatefulWidget {
   const LoginCard({super.key});
@@ -49,10 +48,8 @@ class _LoginCardState extends State<LoginCard> {
               CustomTextField(controller: userNameController),
               const SizedBox(height: 20),
               LoginButton(userNameController: userNameController),
-              const SizedBox(height: 20),
-              const ContinueLine(),
-              const SizedBox(height: 20),
-              const MyParentWidget()
+              const SizedBox(height: 23),
+              const OptionalWidget(),
             ],
           ),
         ),
