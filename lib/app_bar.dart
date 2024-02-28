@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
-class AppBarHome extends StatefulWidget implements PreferredSizeWidget {
-  const AppBarHome({super.key})
+class AppBarHomePage extends StatefulWidget implements PreferredSizeWidget {
+  const AppBarHomePage({super.key})
       : preferredSize = const Size.fromHeight(kToolbarHeight);
 
   @override
   final Size preferredSize;
 
   @override
-  _AppBarHomeState createState() => _AppBarHomeState();
+  AppBarHomePageState createState() => AppBarHomePageState();
 }
 
-class _AppBarHomeState extends State<AppBarHome> {
+class AppBarHomePageState extends State<AppBarHomePage> {
   String userName = '';
 
   @override
@@ -31,11 +31,6 @@ class _AppBarHomeState extends State<AppBarHome> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      leading: IconButton(
-        icon: const SizedBox(),
-        onPressed: () {},
-      ),
-      titleSpacing: -40.0,
       backgroundColor: Colors.transparent,
       elevation: 0,
       actions: [

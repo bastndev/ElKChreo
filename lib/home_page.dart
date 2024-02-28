@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const AppBarHome(),
+      appBar: const AppBarHomePage(),
       // appBar: const AppBarPe(key: Key('AppBarPe')),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
