@@ -70,20 +70,17 @@ class _LoginPageState extends State<LoginPage> {
       height: 55,
       child: TextButton(
         onPressed: () async {
-          SharedPreferences sp = await SharedPreferences.getInstance();
-
-          sp.setString("userName", userNameController.text);
-
           final pres = await SharedPreferences.getInstance();
+          final sp = await SharedPreferences.getInstance();
+
           pres.setBool('onboarding', true);
+          sp.setString("userName", userNameController.text);
 
           if (!mounted) return;
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => const HomePage()),
           );
-          // Navigator.push(context,
-          //     MaterialPageRoute(builder: (context) => const HomePage()));
         },
         child: const Text(
           "Get Started",
