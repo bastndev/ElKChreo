@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice/pages/home/home_page.dart';
-import 'package:practice/pages/auth/login/login_page.dart';
+import 'package:practice/pages/auth/login/login_card.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() async {
@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       // home: const LoginPage(),
-      home: onboarding ? const HomePage() : const LoginPage(),
+      home: onboarding ? const HomePage() : const LoginCard(),
     );
   }
 }
