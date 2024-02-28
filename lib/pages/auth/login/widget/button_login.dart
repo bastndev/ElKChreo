@@ -22,10 +22,10 @@ class _ButtonHomeState extends State<ButtonHome> {
   Widget build(BuildContext context) {
     return Container(
       decoration: const BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(10)),
+        borderRadius: BorderRadius.all(Radius.circular(13)),
         color: Colors.pink,
       ),
-      width: MediaQuery.of(context).size.width * .9,
+      width: MediaQuery.of(context).size.width * .5,
       height: 55,
       child: TextButton(
         onPressed: () async {
@@ -42,9 +42,10 @@ class _ButtonHomeState extends State<ButtonHome> {
           );
         },
         child: const Text(
-          "Get Started",
+          "Iniciar Sesión",
           style: TextStyle(
             color: Colors.white,
+            fontSize: 18,
           ),
         ),
       ),
