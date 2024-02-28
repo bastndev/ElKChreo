@@ -1,47 +1,50 @@
 import 'package:flutter/material.dart';
 import 'package:practice/core/themes/colors/my_color.dart';
 
+const String negocioImagePath = 'assets/images/negocio.png';
+const String empresaImagePath = 'assets/images/empresa.png';
+
 class OptionalWidget extends StatefulWidget {
   const OptionalWidget({super.key});
 
   @override
-  _OptionalWidgetState createState() => _OptionalWidgetState();
+  OptionalWidgetState createState() => OptionalWidgetState();
 }
 
-class _OptionalWidgetState extends State<OptionalWidget> {
+class OptionalWidgetState extends State<OptionalWidget> {
   String? selectedImagePath;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        const ContinueLine(),
+        const OptionalLine(),
         const SizedBox(height: 15),
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SquareTile(
-              imagePath: 'assets/images/negocio.png',
-              isSelected: selectedImagePath == 'assets/images/negocio.png',
+            // Image for the business
+            BusinessBox(
+              imagePath: negocioImagePath,
+              isSelected: selectedImagePath == negocioImagePath,
               onTap: () {
                 setState(() {
-                  selectedImagePath =
-                      selectedImagePath == 'assets/images/negocio.png'
-                          ? null
-                          : 'assets/images/negocio.png';
+                  selectedImagePath = selectedImagePath == negocioImagePath
+                      ? null
+                      : negocioImagePath;
                 });
               },
             ),
             const SizedBox(width: 20),
-            SquareTile(
-              imagePath: 'assets/images/empresa.png',
-              isSelected: selectedImagePath == 'assets/images/empresa.png',
+            // Image for the company
+            BusinessBox(
+              imagePath: empresaImagePath,
+              isSelected: selectedImagePath == empresaImagePath,
               onTap: () {
                 setState(() {
-                  selectedImagePath =
-                      selectedImagePath == 'assets/images/empresa.png'
-                          ? null
-                          : 'assets/images/empresa.png';
+                  selectedImagePath = selectedImagePath == empresaImagePath
+                      ? null
+                      : empresaImagePath;
                 });
               },
             ),
@@ -52,8 +55,8 @@ class _OptionalWidgetState extends State<OptionalWidget> {
   }
 }
 
-class ContinueLine extends StatelessWidget {
-  const ContinueLine({super.key});
+class OptionalLine extends StatelessWidget {
+  const OptionalLine({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -86,12 +89,12 @@ class ContinueLine extends StatelessWidget {
   }
 }
 
-class SquareTile extends StatefulWidget {
+class BusinessBox extends StatefulWidget {
   final String imagePath;
   final bool isSelected;
   final VoidCallback onTap;
 
-  const SquareTile({
+  const BusinessBox({
     super.key,
     required this.imagePath,
     required this.isSelected,
@@ -99,10 +102,10 @@ class SquareTile extends StatefulWidget {
   });
 
   @override
-  SquareTileState createState() => SquareTileState();
+  BusinessBoxState createState() => BusinessBoxState();
 }
 
-class SquareTileState extends State<SquareTile> {
+class BusinessBoxState extends State<BusinessBox> {
   Color get backgroundColor =>
       widget.isSelected ? MyColor.mainButton : MyColor.secondButton;
 
