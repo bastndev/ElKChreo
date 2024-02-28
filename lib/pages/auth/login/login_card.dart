@@ -45,7 +45,7 @@ class _LoginCardState extends State<LoginCard> {
               TextField(
                 controller: userNameController,
                 decoration: InputDecoration(
-                  hintText: "Name",
+                  hintText: "Nombre su negocio",
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
