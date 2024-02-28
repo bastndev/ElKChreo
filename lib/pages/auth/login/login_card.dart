@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:practice/pages/auth/login/widget/button_login.dart';
+import 'package:practice/pages/auth/login/widget/buttons_optional.dart';
 import 'package:practice/pages/auth/login/widget/input_name.dart';
+import 'package:practice/pages/auth/login/widget/line_optional.dart';
 
 class LoginCard extends StatefulWidget {
   const LoginCard({super.key});
@@ -46,6 +48,10 @@ class _LoginCardState extends State<LoginCard> {
               CustomTextField(controller: userNameController),
               const SizedBox(height: 20),
               ButtonHome(userNameController: userNameController),
+              const SizedBox(height: 20),
+              const ContinueLine(),
+              const SizedBox(height: 20),
+              const MyParentWidget()
             ],
           ),
         ),
