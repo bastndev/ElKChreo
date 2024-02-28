@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:practice/pages/home/widget/appbar_home.dart';
-// import 'package:practice/appbar.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class HomePage extends StatefulWidget {
