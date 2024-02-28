@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:practice/core/themes/colors/my_color.dart';
 import 'package:practice/pages/auth/login/widget/input_name.dart';
-import 'package:practice/pages/auth/login/widget/button_login.dart';
+import 'package:practice/pages/auth/login/widget/login_button.dart';
 import 'package:practice/pages/auth/login/widget/optional_widget.dart';
 
 class LoginCard extends StatefulWidget {
