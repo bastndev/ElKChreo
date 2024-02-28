@@ -37,7 +37,7 @@ class AppBarHomePageState extends State<AppBarHomePage> {
         Padding(
           padding: const EdgeInsets.only(right: 10),
           child: IconButton(
-            icon: const Icon(Icons.abc),
+            icon: const Icon(Icons.sunny),
             onPressed: () {},
           ),
         )
