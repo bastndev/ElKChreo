@@ -109,7 +109,7 @@ class BusinessBox extends StatefulWidget {
 
 class BusinessBoxState extends State<BusinessBox> {
   Color get backgroundColor =>
-      widget.isSelected ? MyColor.mainButton : MyColor.secondButton;
+      widget.isSelected ? MyColor.activeButton : MyColor.secondButton;
 
   @override
   Widget build(BuildContext context) {

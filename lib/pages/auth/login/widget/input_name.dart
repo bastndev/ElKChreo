@@ -9,6 +9,7 @@ class CustomTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextField(
       controller: controller,
+      textCapitalization: TextCapitalization.sentences, 
       decoration: InputDecoration(
         hintText: "Nombre su negocio",
         border: OutlineInputBorder(
@@ -18,4 +19,3 @@ class CustomTextField extends StatelessWidget {
     );
   }
 }
-

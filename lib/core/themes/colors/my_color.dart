@@ -6,9 +6,9 @@ class MyColor {
 
   // Buttons Colors
   static const Color mainButton = Color.fromARGB(255, 32, 32, 32);
-  static const Color secondButton = Color.fromARGB(255, 221, 222, 221);
-  static const Color disableButton = Color.fromARGB(255, 13, 178, 224);
-  static const Color activeButton = Color.fromARGB(255, 10, 230, 10);
+  static const Color secondButton = Color.fromARGB(255, 225, 227, 225);
+  static const Color disableButton = Color.fromARGB(255, 199, 198, 198);
+  static const Color activeButton = Color.fromARGB(255, 61, 62, 62);
 
   // Text Color
   static const Color text = Color.fromARGB(255, 255, 255, 255);
