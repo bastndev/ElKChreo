@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Hello, Home Page 2'),
+            Text('Hello, Home Page'),
           ],
         ),
       ),
