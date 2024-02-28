@@ -11,31 +11,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String userName = "";
-  getData() async {
-    SharedPreferences sp = await SharedPreferences.getInstance();
-    setState(() {
-      userName = sp.getString("userName") ?? "";
-    });
-  }
-
-  @override
-  void initState() {
-    getData();
-    super.initState();
-  }
-
   /// is a property of Scaffold widget. It is used to set the body `body` of the Scaffold. It takes a widget as a parameter.
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: const AppBarHomePage(),
-      // appBar: const AppBarPe(key: Key('AppBarPe')),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Text(userName),
-        ],
+      body: const Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text('Hello, Home Page'),
+          ],
+        ),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
