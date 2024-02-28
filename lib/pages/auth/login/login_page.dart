@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice/onboarding/login_items.dart';
-import 'package:practice/widgets/button_home.dart';
+import 'package:practice/pages/auth/login/widget/button_home.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,7 +11,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   TextEditingController userNameController = TextEditingController();
 
-  final controller = LoginItems();
   final pageController = PageController();
 
   bool isLastPage = false;
@@ -23,24 +21,8 @@ class _LoginPageState extends State<LoginPage> {
       body: Container(
         margin: const EdgeInsets.symmetric(horizontal: 20),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Expanded(
-              child: PageView.builder(
-                itemCount: controller.items.length,
-                controller: pageController,
-                itemBuilder: (context, index) {
-                  return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Image.asset(controller.items[index].image),
-                      const SizedBox(height: 20),
-                      Text(controller.items[index].title),
-                      Text(controller.items[index].description),
-                    ],
-                  );
-                },
-              ),
-            ),
             TextField(
               controller: userNameController,
               decoration: InputDecoration(
