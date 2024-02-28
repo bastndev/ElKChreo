@@ -45,7 +45,7 @@ class _LoginButtonState extends State<LoginButton> {
         child: const Text(
           "Iniciar Sesión",
           style: TextStyle(
-            color: Colors.white,
+            color: MyColor.text,
             fontSize: 18,
           ),
         ),

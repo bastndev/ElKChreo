@@ -60,27 +60,29 @@ class OptionalLine extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 25.0),
+    return const Padding(
+      padding: EdgeInsets.symmetric(horizontal: 20.0),
       child: Row(
         children: [
-          const Expanded(
+          Expanded(
             child: Divider(
               thickness: 0.5,
-              color: Colors.grey,
+              color: MyColor.optionalLine,
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            padding: EdgeInsets.symmetric(horizontal: 10.0),
             child: Text(
               'Opcional',
-              style: TextStyle(color: Colors.grey[700]),
+              style: TextStyle(
+                color: MyColor.optionalText,
+              ),
             ),
           ),
-          const Expanded(
+          Expanded(
             child: Divider(
               thickness: 0.5,
-              color: Colors.grey,
+              color: MyColor.optionalLine,
             ),
           ),
         ],

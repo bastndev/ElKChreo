@@ -38,7 +38,7 @@ class _LoginCardState extends State<LoginCard> {
               const Text(
                 'Bienvenido',
                 style: TextStyle(
-                  color: Colors.black,
+                  color: MyColor.title,
                   fontSize: 24,
                   fontWeight: FontWeight.w600,
                   fontFamily: 'Poppins',
