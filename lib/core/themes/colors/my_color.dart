@@ -11,7 +11,8 @@ class MyColor {
   static const Color activeButton = Color.fromARGB(255, 61, 62, 62);
 
   // Text Color
-  static const Color text = Color.fromARGB(255, 255, 255, 255);
+  static const Color textWhite = Color.fromARGB(255, 245, 245, 245);
+  static const Color textBlack = Color.fromARGB(255, 32, 32, 32);
   static const Color title = Color.fromARGB(255, 0, 0, 0);
   static const Color optionalText = Color.fromARGB(255, 137, 135, 135);
 
