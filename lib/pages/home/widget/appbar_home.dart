@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:practice/core/themes/dark_mode.dart';
+import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class AppBarHomePage extends StatefulWidget implements PreferredSizeWidget {
@@ -36,10 +38,17 @@ class AppBarHomePageState extends State<AppBarHomePage> {
       actions: [
         Padding(
           padding: const EdgeInsets.only(right: 10),
-          child: IconButton(
-            icon: const Icon(Icons.sunny),
-            onPressed: () {},
-          ),
+          // Dark Mode and Light Mode change button
+          child: Consumer<UiProvider>(builder: (context, uiProvider, child) {
+            return IconButton(
+              icon: uiProvider.isDark
+                  ? const Icon(Icons.nightlight_round)
+                  : const Icon(Icons.wb_sunny),
+              onPressed: () {
+                uiProvider.changeTheme();
+              },
+            );
+          }),
         )
       ],
       title: RichText(
