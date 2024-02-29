@@ -16,7 +16,7 @@ class AppBarHomePage extends StatefulWidget implements PreferredSizeWidget {
 
 class AppBarHomePageState extends State<AppBarHomePage> {
   String userName = '';
-  Color greetingColor = Colors.black; // Nuevo estado para el color del saludo
+  Color greetingColor = Colors.black;
 
   @override
   void initState() {
@@ -28,7 +28,6 @@ class AppBarHomePageState extends State<AppBarHomePage> {
     SharedPreferences sp = await SharedPreferences.getInstance();
     setState(() {
       userName = sp.getString("userName") ?? "";
-      // Recupera el color del saludo del almacenamiento persistente
       greetingColor =
           (sp.getBool("isDark") ?? false) ? Colors.white : Colors.black;
     });
@@ -67,7 +66,7 @@ class AppBarHomePageState extends State<AppBarHomePage> {
             TextSpan(
               text: 'Hola, ',
               style: TextStyle(
-                color: greetingColor, // Usa el color del saludo
+                color: greetingColor,
                 fontSize: 24.0,
                 fontWeight: FontWeight.w300,
               ),
